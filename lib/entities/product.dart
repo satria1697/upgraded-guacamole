@@ -37,7 +37,7 @@ class ProductResponse {
   Map<String, dynamic> toJson() => {
         "products": products == null
             ? []
-            : List<dynamic>.from(products!.map((x) => x!.toJson())),
+            : List<dynamic>.from(products!.map((x) => x.toJson())),
         "total": total,
         "skip": skip,
         "limit": limit,
