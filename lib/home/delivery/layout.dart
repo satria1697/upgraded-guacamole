@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:two/entities/product.dart';
 import 'package:two/home/bloc/home_cubit.dart';
+import 'package:two/home/bloc/home_state.dart';
 import 'package:two/home/delivery/box.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -30,9 +31,9 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: BlocProvider(
         create: (context) => _homeCubit,
-        child: BlocBuilder<HomeCubit, HomeCubitState>(
+        child: BlocBuilder<HomeCubit, HomeState>(
           builder: (context, state) {
-            if (state.isLoading ?? false) {
+            if (state.isLoading) {
               return Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
